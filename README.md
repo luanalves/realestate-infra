@@ -35,7 +35,21 @@ composer create-project laravel/laravel .
 
 ---
 
-### 3. Suba os containers pela primeira vez
+### 3. Configure as variáveis de ambiente
+
+Copie o arquivo `.env.example` para `.env` e configure as variáveis necessárias:
+
+```bash
+cp .env.example .env
+```
+
+> O arquivo `.env.example` contém todas as variáveis de ambiente necessárias para o projeto com valores de exemplo e comentários explicativos. É essencial utilizar este arquivo como referência ao configurar seu ambiente local.
+>
+> Lembre-se: Sempre que adicionar ou alterar variáveis no arquivo `.env`, atualize também o arquivo `.env.example` para que outros desenvolvedores tenham as informações necessárias.
+
+---
+
+### 4. Suba os containers pela primeira vez
 
 ```bash
 docker compose up -d --build

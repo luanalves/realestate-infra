@@ -20,6 +20,13 @@ This is a real estate application infrastructure project that uses Docker to run
 ## Development Environment
 The application expects a Laravel project in the `src/` directory (mounted as `/var/www` in the container).
 
+### Environment Variables
+- Always maintain the `.env.example` file when making changes to the `.env` file.
+- Any time you add or update environment variables in `.env`, make sure to update `.env.example` with appropriate placeholder values and comments.
+- New environment variables should include descriptive comments in the `.env.example` file.
+- This ensures that new developers joining the project can quickly set up their environment with all necessary configuration options.
+- Remember that `.env` files contain sensitive information and should not be committed to the repository, while `.env.example` is tracked in version control.
+
 ## Key Technologies
 - Docker & Docker Compose
 - PHP 8.2
