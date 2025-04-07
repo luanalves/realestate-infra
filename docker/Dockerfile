@@ -8,6 +8,14 @@ RUN apt-get update && apt-get install -y \
 RUN pecl install redis \
     && docker-php-ext-enable redis
 
+# Install MongoDB extension
+RUN apt-get install -y libcurl4-openssl-dev pkg-config libssl-dev \
+    && pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
+# Install Xdebug
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
@@ -15,7 +23,7 @@ COPY docker/php/php.ini /usr/local/etc/php/conf.d/app.ini
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 EXPOSE 80
 

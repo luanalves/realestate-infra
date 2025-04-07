@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     container_name: realestate_app
     volumes:
       - ${APP_PATH}:/var/www
@@ -42,7 +44,6 @@ services:
       - "5432:5432"
     networks:
       - app-network
-
   redis:
     image: redis:alpine
     container_name: realestate_redis
@@ -52,7 +53,6 @@ services:
       - redisdata:/data
     networks:
       - app-network
-
   mongodb:
     image: mongo:6
     container_name: realestate_mongo
@@ -63,11 +63,9 @@ services:
       - mongodata:/data/db
     networks:
       - app-network
-
 networks:
   app-network:
     driver: bridge
-
 volumes:
   pgdata:
   redisdata:

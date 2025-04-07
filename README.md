@@ -94,6 +94,24 @@ Se tudo estiver certo, você verá a página inicial do Laravel.
 
 ---
 
+## 🐛 Depuração com Xdebug
+
+O ambiente está configurado com Xdebug para depuração em tempo real. Para utilizá-lo:
+
+### Configuração no VSCode:
+1. Instale a extensão PHP Debug
+2. Configure o arquivo `launch.json` para usar a porta 9004
+
+### Configuração no PHPStorm:
+1. Acesse Settings > PHP > Debug
+2. Verifique se o Debug port está configurado para 9004
+3. Configure o mapeamento de paths em Settings > PHP > Servers
+
+> O Xdebug está configurado na porta 9004 e ativo por padrão no ambiente de desenvolvimento.
+> Para iniciar uma sessão de debug, defina os breakpoints no seu IDE e ative o listener do debugger.
+
+---
+
 ## 🧹 Parar os containers
 ```bash
 docker compose down
