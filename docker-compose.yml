@@ -9,7 +9,7 @@ services:
       - "host.docker.internal:host-gateway"
     container_name: realestate_app
     volumes:
-      - ${APP_PATH}:/var/www
+      - ${APP_PATH}:/var/www/html
     ports:
       - "8080:80"
     networks:

@@ -31,7 +31,7 @@ cd src
 composer create-project laravel/laravel .
 ```
 
-> Você pode colocar o projeto Laravel em qualquer lugar do seu sistema de arquivos. O `docker-compose.yml` está configurado para montar o diretório `src/` local como `/var/www` dentro do container.
+> Você pode colocar o projeto Laravel em qualquer lugar do seu sistema de arquivos. O `docker-compose.yml` está configurado para montar o diretório `src/` local como `/var/www/html` dentro do container.
 
 ---
 

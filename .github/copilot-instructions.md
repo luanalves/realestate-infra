@@ -18,7 +18,7 @@ This is a real estate application infrastructure project that uses Docker to run
 - `README.md` - Project documentation
 
 ## Development Environment
-The application expects a Laravel project in the `src/` directory (mounted as `/var/www` in the container).
+The application expects a Laravel project in the `src/` directory (mounted as `/var/www/html` in the container).
 
 ### Environment Variables
 - Always maintain the `.env.example` file when making changes to the `.env` file.
