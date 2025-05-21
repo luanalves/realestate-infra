@@ -94,6 +94,58 @@ Se tudo estiver certo, você verá a página inicial do Laravel.
 
 ---
 
+## 🔗 Como conectar aos bancos de dados
+
+### PostgreSQL
+- **De dentro do container app (Laravel):**
+  - Host: `realestate_postgres`
+  - Porta: `5432`
+  - Usuário, senha e banco: conforme variáveis de ambiente (`DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`)
+  - Exemplo de string de conexão Laravel:
+    ```env
+    DB_CONNECTION=pgsql
+    DB_HOST=realestate_postgres
+    DB_PORT=5432
+    DB_DATABASE=seu_banco
+    DB_USERNAME=seu_usuario
+    DB_PASSWORD=sua_senha
+    ```
+- **De sua máquina (host):**
+  - Host: `localhost`
+  - Porta: `5432`
+  - Use os mesmos usuário, senha e banco.
+
+### Redis
+- **De dentro do container app (Laravel):**
+  - Host: `realestate_redis`
+  - Porta: `6379`
+  - Senha: conforme `REDIS_PASSWORD` (se configurado)
+  - Exemplo de configuração Laravel:
+    ```env
+    REDIS_HOST=realestate_redis
+    REDIS_PASSWORD=null
+    REDIS_PORT=6379
+    ```
+- **De sua máquina (host):**
+  - Host: `localhost`
+  - Porta: `6379`
+
+### MongoDB
+- **De dentro do container app (Laravel):**
+  - Host: `realestate_mongo`
+  - Porta: `27017`
+  - String de conexão: `MONGO_URI=mongodb://realestate_mongo:27017/seu_banco`
+- **De sua máquina (host):**
+  - Host: `localhost`
+  - Porta: `27017`
+  - String de conexão: `mongodb://localhost:27017/seu_banco`
+
+> Substitua `seu_banco`, `seu_usuario` e `sua_senha` pelos valores definidos no seu `.env`.
+> 
+> Para acessar via ferramentas gráficas (ex: DBeaver, MongoDB Compass), use o host `localhost` e as portas acima.
+
+---
+
 ## 🐛 Depuração com Xdebug
 
 O ambiente está configurado com Xdebug para depuração em tempo real. Para utilizá-lo:
