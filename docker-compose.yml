@@ -27,6 +27,9 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       REDIS_HOST: ${REDIS_HOST}
       REDIS_PASSWORD: ${REDIS_PASSWORD}
+      MONGO_DB_HOST: ${MONGO_DB_HOST}
+      MONGO_DB_PORT: ${MONGO_DB_PORT}
+      MONGO_DB_DATABASE: ${MONGO_DB_DATABASE}
       MONGO_URI: ${MONGO_URI}
   postgres:
     image: postgres:15

@@ -134,13 +134,15 @@ Se tudo estiver certo, você verá a página inicial do Laravel.
 - **De dentro do container app (Laravel):**
   - Host: `realestate_mongo`
   - Porta: `27017`
-  - String de conexão: `MONGO_URI=mongodb://realestate_mongo:27017/seu_banco`
+  - Banco: `realestate` (definido em `MONGO_DB_DATABASE`)
+  - String de conexão: `MONGO_URI=mongodb://realestate_mongo:27017/realestate`
 - **De sua máquina (host):**
   - Host: `localhost`
   - Porta: `27017`
-  - String de conexão: `mongodb://localhost:27017/seu_banco`
+  - Banco: `realestate`
+  - String de conexão: `mongodb://localhost:27017/realestate`
 
-> Substitua `seu_banco`, `seu_usuario` e `sua_senha` pelos valores definidos no seu `.env`.
+> O nome do banco MongoDB é definido pela variável `MONGO_DB_DATABASE` no `.env` e já está configurado como `realestate` por padrão.
 > 
 > Para acessar via ferramentas gráficas (ex: DBeaver, MongoDB Compass), use o host `localhost` e as portas acima.
 
