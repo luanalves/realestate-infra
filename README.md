@@ -88,16 +88,16 @@ php artisan tinker
 
 Abra no navegador:
 ```
-http://realestate.localhost:8080
+http://localhost:8080
 ```
 ou
 ```
-http://realestate.localhost
+http://realestate.localhost:8080
 ```
 Se tudo estiver certo, você verá a página inicial do Laravel.
 
 > ⚠️ Para que o domínio funcione, adicione a seguinte linha ao seu arquivo de hosts local:
->
+> 
 > **Linux/macOS:** Edite o arquivo `/etc/hosts` com permissão de administrador:
 > ```bash
 > sudo nano /etc/hosts
