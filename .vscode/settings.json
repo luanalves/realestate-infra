@@ -1,0 +1,9 @@
+{
+    "php.debug.port": [9004],
+    "php.suggest.basic": false,
+    "php.validate.enable": true,
+    "php.validate.executablePath": "/usr/bin/php",
+    "files.associations": {
+        "*.blade.php": "html"
+    }
+}

@@ -12,7 +12,7 @@ Crie o arquivo `.vscode/launch.json` no diretório `realestate-infra`:
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Listen for Xdebug",
+            "name": "Listen for Xdebug with Session",
             "type": "php",
             "request": "launch",
             "port": 9004,
@@ -21,7 +21,12 @@ Crie o arquivo `.vscode/launch.json` no diretório `realestate-infra`:
             },
             "ignore": [
                 "**/vendor/**/*.php"
-            ]
+            ],
+            "xdebugSettings": {
+                "max_children": 128,
+                "max_data": 1024,
+                "max_depth": 1
+            }
         }
     ]
 }
