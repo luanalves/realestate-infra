@@ -13,9 +13,10 @@ RUN apt-get install -y libcurl4-openssl-dev pkg-config libssl-dev \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 
-# Install Xdebug
+# Install Xdebug for debugging
 RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && docker-php-ext-enable xdebug \
+    && echo "Xdebug installed successfully"
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 

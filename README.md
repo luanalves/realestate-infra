@@ -88,11 +88,11 @@ php artisan tinker
 
 Abra no navegador:
 ```
-http://localhost:8080
+http://realestate.localhost
 ```
 ou
 ```
-http://realestate.localhost:8080
+http://realestate.localhost
 ```
 Se tudo estiver certo, você verá a página inicial do Laravel.
 
@@ -169,19 +169,56 @@ Se tudo estiver certo, você verá a página inicial do Laravel.
 
 ## 🐛 Depuração com Xdebug
 
-O ambiente está configurado com Xdebug para depuração em tempo real. Para utilizá-lo:
+O ambiente está configurado com Xdebug 3.x para depuração em tempo real. Para utilizá-lo:
 
 ### Configuração no VSCode:
-1. Instale a extensão PHP Debug
-2. Configure o arquivo `launch.json` para usar a porta 9004
+1. Instale a extensão **PHP Debug**
+2. Crie ou configure o arquivo `.vscode/launch.json`:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9004,
+            "pathMappings": {
+                "/var/www/html": "${workspaceFolder}/src"
+            }
+        }
+    ]
+}
+```
 
 ### Configuração no PHPStorm:
-1. Acesse Settings > PHP > Debug
-2. Verifique se o Debug port está configurado para 9004
-3. Configure o mapeamento de paths em Settings > PHP > Servers
+1. Acesse **Settings > PHP > Debug**
+2. Configure o **Debug port** para **9004**
+3. Em **Settings > PHP > Servers**, adicione um servidor:
+   - Name: `realestate.localhost`
+   - Host: `realestate.localhost`
+   - Port: `80`
+   - Debugger: `Xdebug`
+   - Path mappings: `/var/www/html` → `caminho/para/seu/projeto/src`
 
-> O Xdebug está configurado na porta 9004 e ativo por padrão no ambiente de desenvolvimento.
-> Para iniciar uma sessão de debug, defina os breakpoints no seu IDE e ative o listener do debugger.
+### Como usar:
+1. Defina breakpoints no seu código
+2. Inicie o listener de debug no seu IDE
+3. Acesse a aplicação no navegador ou execute comandos artisan
+4. O debugger irá parar nos breakpoints definidos
+
+### Script auxiliar:
+Use o script `docker/xdebug-toggle.sh` para habilitar/desabilitar o Xdebug:
+```bash
+# Habilitar Xdebug
+./docker/xdebug-toggle.sh on
+
+# Desabilitar Xdebug
+./docker/xdebug-toggle.sh off
+```
+
+> **Nota:** O Xdebug está configurado na porta **9004** e está ativo por padrão no ambiente de desenvolvimento.
+> O modo está configurado como `debug,develop,coverage` para suporte completo a debugging e coverage de testes.
 
 ---
 
